@@ -16,9 +16,36 @@ class Main {
      * @return the unencrypted message
      */
     public static String decode(String encrypted, Node root) {
-        // TODO
+        Node start = root;
+        StringBuilder sb = new StringBuilder();
+       for (char c : encrypted.toCharArray()) {
+           switch (c){
+               case '0':
+                   if (root.getLeftChild() != null) root = root.getLeftChild();
+                   if (root.getSymbol() != (char) 0) {
+                       sb.append(root.getSymbol());
+                       root = start;
+                   }
+                   break;
+               case '1':
+                   if (root.getMiddleChild() != null) root = root.getMiddleChild();
+                   if (root.getSymbol() != (char) 0) {
+                       sb.append(root.getSymbol());
+                       root = start;
+                   }
+                   break;
+               case '2':
+                   if (root.getRightChild() != null) root = root.getRightChild();
+                   if (root.getSymbol() != (char) 0) {
+                       sb.append(root.getSymbol());
+                       root = start;
+                   }
+                   break;
+           }
 
-        return "lol";
+       }
+
+        return sb.toString();
     }
 
     /**

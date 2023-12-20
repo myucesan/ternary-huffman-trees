@@ -1,4 +1,4 @@
-**This implementation is unfinished.**
+**This implementation is finished.**
 # Old exam question 
 Although Huffman’s encoding works great for binary systems, we can shorten the encodings even more by using ternary (0, 1, 2). With a 0 for the left child, a 1 for the middle child and a 2 for the right child, we could have the encoding “021” now for “left child, right child, middle child”.
 
